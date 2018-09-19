@@ -10,24 +10,19 @@
   		
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"> 
-        <style>
-  			{% for item in gen_css %}
-  		        {{item}}
-  			{% endfor %}
-	  	</style>
 	</head>
 	<body>
         <div class="main-header">
             <h1>BAND_NAMES</h1> 
             <div class="mini-nav">
-                <p><a href="/about"> (about) </a></p>
+                <p><a href="/"> (go back home) </a></p>
                 <p><a href="/submit">  (submit your own band_name) </a></p>
             </div>
         </div>
 		<div class="grid-container">
-	        {% for item in band_names %}
-        		<div class="grid-item" id="name-{{loop.index0}}">{{item}}</div>
-        	{% endfor %}
+	        <p class="about-text"> 
+            This website is a collaboration between Hunter Brown & Quinn Batten. It's a translation and extension of one of Hunter's art pieces onto the ~web~.
+          </p>
         </div> 
   </body>
 </html>

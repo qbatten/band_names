@@ -10,24 +10,25 @@
   		
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"> 
-        <style>
-  			{% for item in gen_css %}
-  		        {{item}}
-  			{% endfor %}
-	  	</style>
 	</head>
 	<body>
         <div class="main-header">
             <h1>BAND_NAMES</h1> 
             <div class="mini-nav">
                 <p><a href="/about"> (about) </a></p>
-                <p><a href="/submit">  (submit your own band_name) </a></p>
+                <p><a href="/">  (go back home) </a></p>
             </div>
         </div>
 		<div class="grid-container">
-	        {% for item in band_names %}
-        		<div class="grid-item" id="name-{{loop.index0}}">{{item}}</div>
-        	{% endfor %}
+	        <p class="about-text"> 
+            Submit your own band name!
+          </p>
+      <form action="/submit" method="post">
+          <div class="form-group">
+              <input autocomplete="off" autofocus class="form-control" name="bandname" placeholder="Band Name" type="text"/>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit it</button>
+      </form>
         </div> 
   </body>
 </html>
