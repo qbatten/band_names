@@ -30,16 +30,30 @@ def index():
         shuffle(band_names_tmp)
         # Generate CSS
         gen_css = []
+        prev = randint(2, 80)
+        rand_1 = randint(-10, 10)
         for i, item in enumerate(band_names_tmp):
             # Randomization
-            rand_1 = randint(5, 600)
+            rand_1 = randint(-50, 50)
+            while (prev + rand_1) < 0 or (prev + rand_1) > 80:
+                rand_1 = randint(-50, 50)
             rand_2 = randint(0, 40)
             r = lambda: randint(0,255)
             color = format('#%02X%02X%02X' % (r(),r(),r()))
             fontrand = randint(0, len(fonts) - 1)
             font = fonts[fontrand]
             # Create individual CSS string
-            tmp = "#name-" + str(i) + "{width:10%; padding-left: " + str(rand_1) + "px; padding-top: " + str(rand_2) + "px; color: " + color + "; font-family: " + font + ";}"
+            tmp = "#name-"
+            tmp.join(str(i))
+            tmp.join("{width:10%; padding-left: ")
+            tmp.join(str(prev + rand_1))
+            tmp.join("%; padding-top: ")
+            tmp.join(str(rand_2))
+            tmp.join("px; color: ")
+            tmp.join(color)
+            tmp.join("; font-family: ")
+            tmp.join(font)
+            tmp.join(";}")
             gen_css.append(tmp)
         return render_template("index.html",
                                band_names=band_names_tmp,

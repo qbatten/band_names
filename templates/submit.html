@@ -3,7 +3,7 @@
 	<head>
         <!-- Required meta tags -->
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
         <!-- My Stylesheet -->
   		<link href="/static/styles.css" rel="stylesheet"/>
@@ -22,13 +22,13 @@
 		<div class="grid-container">
 	        <p class="about-text"> 
             Submit your own band name!
-          </p>
+          <p>
       <form action="/submit" method="post">
           <div class="form-group">
               <input autocomplete="off" autofocus class="form-control" name="bandname" placeholder="Band Name" type="text"/>
           </div>
           <button class="btn btn-primary" type="submit">Submit it</button>
       </form>
-        </div> 
+    </div> 
   </body>
 </html>
